@@ -366,12 +366,14 @@
     align-items: flex-start;
     min-height: 632px;
 
-    & + & {
-      margin-top: 20px;
-    }
-
     @include tMax {
       min-height: 1px;
+    }
+
+    @include mMax {
+      & + & {
+        margin-top: 20px;
+      }
     }
 
     img {
