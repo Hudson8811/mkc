@@ -56,7 +56,7 @@ ymaps.ready(function () {
         myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
         }, {
             iconLayout: 'default#image',
-            iconImageHref: '../img/map-icon.png',
+            iconImageHref: 'img/map-icon.png',
             iconImageSize: [255, 153],
             iconImageOffset: [-46, -153]
         })
