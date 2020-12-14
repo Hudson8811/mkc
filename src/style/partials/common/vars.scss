@@ -1,0 +1,17 @@
+@mixin tMax {
+  @media (max-width: 1080px) {
+    @content;
+  }
+}
+
+@mixin nMax {
+  @media (max-width: 1368px) {
+    @content;
+  }
+}
+
+@mixin mMax {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
