@@ -55,6 +55,16 @@
         }
       }
     }
+
+    .container {
+      @include dMin {
+        position: relative;
+
+        .first-screen__slider {
+          top: 0;
+        }
+      }
+    }
   }
 
   &__btns {
@@ -253,10 +263,11 @@
 
   &__catalog {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: stretch;
     margin-top: 60px;
     flex-wrap: wrap;
+    margin-bottom: -20px;
 
     @include tMax {
       margin-top: 40px;
@@ -269,14 +280,25 @@
 
   &__item {
     width: calc(25% - 60px / 4);
+    margin-left: 20px;
+    margin-bottom: 20px;
+
+    &:nth-child(4n + 1) {
+      margin-left: 0;
+    }
 
     @include tMax {
       width: calc(50% - 10px);
       margin-bottom: 20px;
+
+      &:nth-child(2n + 1) {
+        margin-left: 0;
+      }
     }
 
     @include mMax {
       width: 100%;
+      margin-left: 0;
     }
 
     p {
@@ -287,22 +309,22 @@
       color: #585858;
     }
 
-    &:nth-child(1) {
+    &:nth-child(4n + 1) {
       .how-we-works__icon {
         background: #25a0ff;
       }
     }
-    &:nth-child(2) {
+    &:nth-child(4n + 2) {
       .how-we-works__icon {
         background: #2589ff;
       }
     }
-    &:nth-child(3) {
+    &:nth-child(4n + 3) {
       .how-we-works__icon {
         background: #027ae9;
       }
     }
-    &:nth-child(4) {
+    &:nth-child(4n + 4) {
       .how-we-works__icon {
         background: #026ec2;
       }
@@ -332,16 +354,27 @@
 
     .container {
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-start;
       align-items: stretch;
       flex-wrap: wrap;
+      margin-bottom: -20px;
 
       @include mMax {
         display: block;
       }
 
-      & > div {
+      .assets__section-heading {
         width: calc(25% - 60px / 4);
+        margin-left: 20px;
+        margin-bottom: 20px;
+
+        &:nth-child(4n + 1) {
+          margin-left: 0;
+
+          @include tMax {
+            margin-left: 20px;
+          }
+        }
 
         @include tMax {
           width: calc(33.333% - 40px / 3);
@@ -349,11 +382,17 @@
           &:nth-child(1) {
             width: 100%;
             margin-bottom: 20px;
+            margin-left: 0;
+          }
+
+          &:nth-child(3n + 2) {
+            margin-left: 0;
           }
         }
 
         @include mMax {
           width: 100%;
+          margin-left: 0;
         }
       }
     }
@@ -365,15 +404,36 @@
     justify-content: flex-start;
     align-items: flex-start;
     min-height: 632px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    width: calc(33.333% - 40px / 3);
+
+    @include mMax {
+      width: 100%;
+      margin-left: 0;
+    }
+
+    &:nth-child(3n + 1) {
+      margin-left: 0;
+    }
+
+    &-wrapper {
+      width: calc(75% - 60px / 4);
+      margin-left: 20px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: stretch;
+      flex-wrap: wrap;
+      margin-bottom: -20px;
+
+      @include tMax {
+        width: 100%;
+        margin-left: 0;
+      }
+    }
 
     @include tMax {
       min-height: 1px;
-    }
-
-    @include mMax {
-      & + & {
-        margin-top: 20px;
-      }
     }
 
     img {
@@ -465,7 +525,7 @@
   &__catalog {
     margin-top: 80px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: stretch;
     flex-wrap: wrap;
 
@@ -508,6 +568,18 @@
       width: calc(25% - 60px / 4);
       margin-top: 30px;
       cursor: pointer;
+
+      & + & {
+        margin-left: 20px;
+
+        @include mMax {
+          margin-left: 0;
+        }
+      }
+
+      &:nth-child(4n + 1) {
+        margin-left: 0;
+      }
 
       @include mMax {
         width: 100%;
@@ -558,6 +630,8 @@
     justify-content: flex-start;
     align-items: center;
     margin-top: 100px;
+    flex-wrap: wrap;
+    margin-bottom: -20px;
 
     @include tMax {
       margin-top: 40px;
@@ -568,19 +642,12 @@
       display: flex;
       justify-content: flex-start;
       align-items: center;
-      width: calc(25% - 60px / 4);
+      min-width: calc(25% - 60px / 4);
+      margin-right: 20px;
+      margin-bottom: 20px;
 
       @include tMax {
         width: 100%;
-      }
-
-      & + & {
-        margin-left: 20px;
-
-        @include tMax {
-          margin-left: 0;
-          margin-top: 20px;
-        }
       }
 
       p {
