@@ -121,7 +121,7 @@
   }
 
   &__content {
-    width: calc(100% - 447px);
+    width: calc(100% - 430px);
 
     @include tMax {
       width: calc(100% - 330px);
@@ -180,6 +180,11 @@
         color: #ffffff;
         margin-top: 0;
         margin-bottom: 8px;
+
+        @include mMax {
+          font-size: 12px;
+          line-height: 16px;
+        }
       }
 
       h3 {
@@ -192,6 +197,11 @@
         @include tMax {
           font-size: 16px;
           line-height: 20px;
+        }
+
+        @include mMax {
+          font-size: 14px;
+          line-height: 18px;
         }
       }
     }
@@ -840,7 +850,7 @@
 
   &__map {
     display: block;
-    width: 33%;
+    width: 40%;
     height: 783px;
 
     .ymaps-2-1-77-ground-pane {
@@ -867,7 +877,7 @@
 
     &-wrapper {
       box-sizing: border-box;
-      width: 67%;
+      width: 60%;
       padding: 90px 10px 52px 155px;
 
       @include tMax {

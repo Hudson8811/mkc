@@ -37,6 +37,14 @@ $(document).ready(function () {
         dots: true,
     });
 
+    $('.options__slider').slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        dots: true,
+    });
+
     $('.shilds__slider').slick({
         infinite: true,
         slidesToShow: 3,
@@ -73,7 +81,27 @@ $(document).ready(function () {
 
 
 ymaps.ready(function () {
-    var myMap = new ymaps.Map('map', {
+    if ($('.contacts__section').hasClass('contacts__section-invert')){
+        var myMap = new ymaps.Map('map', {
+            center: [55.74086206899801,37.61425749999998],
+            zoom: 16,
+            controls: []
+        }, {
+            searchControlProvider: 'yandex#search'
+        }),
+
+        myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+        }, {
+            iconLayout: 'default#image',
+            iconImageHref: 'images/invert/black-map-icon.png',
+            iconImageSize: [255, 153],
+            iconImageOffset: [-46, -153]
+        })
+
+    myMap.geoObjects
+        .add(myPlacemark)
+    } else{
+        var myMap = new ymaps.Map('map', {
             center: [55.74086206899801,37.61425749999998],
             zoom: 16,
             controls: []
@@ -91,4 +119,6 @@ ymaps.ready(function () {
 
     myMap.geoObjects
         .add(myPlacemark)
+    }
+   
 });
