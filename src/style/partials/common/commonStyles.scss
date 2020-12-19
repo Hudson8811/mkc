@@ -316,3 +316,44 @@ textarea {
     margin-top: 20px;
   }
 }
+
+.popover {
+  .close {
+    position: absolute;
+    right: -250px;
+    text-decoration: none;
+    color: #fff;
+  }
+
+  &-inner {
+    & > * {
+      background: #25a0ff;
+      box-sizing: border-box !important;
+      padding: 24px 32px;
+      overflow: visible;
+
+      &:before {
+        content: '';
+        position: absolute;
+        bottom: -179px;
+        border: 20px solid transparent;
+        border-top: 20px solid #25a0ff;
+      }
+    }
+
+    .popover-title {
+      display: block;
+      font-size: 13px;
+      line-height: 24px;
+      color: #fafafa;
+    }
+
+    .popover-content {
+      display: block;
+      font-weight: bold;
+      font-size: 13px;
+      line-height: 20px;
+      color: #ffffff;
+    }
+  }
+}
