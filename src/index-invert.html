@@ -24,7 +24,7 @@
               <p>Золотодобыча ведется в Приморском Крае, Магадае</p>
               <p>до 15% в год</p>
               <div class="first-screen__btns">
-                <a href="#" class="blue-btn btn"><span>Получить консультацию</span></a>
+                <a href="#" class="blue-btn btn modal-btn"><span>Получить консультацию</span></a>
                 <a href="#" class="transp-btn btn"><span>Узнать больше</span></a>
                 <p class="first-screen__desc">*Предложение действует
                   для всех регионов</p>
@@ -232,7 +232,7 @@
               <div class="options__content">
                 <img src="images/invert/map.png" alt="">
                 <div class="options__content-text">
-                  <a href="#" class="blue-btn btn">Получить консультацию</a>
+                  <a href="#" class="blue-btn btn modal-btn">Получить консультацию</a>
                 </div>
               </div>
             </div>
@@ -402,7 +402,7 @@
                 <span class="nowrap">с доходностью</span> от 10% до 20% годовых</p>
             </div>
             
-            <a href="#" class="blue-btn btn gold-btn"><span>Заказать звонок</span></a>
+            <a href="#" class="blue-btn btn gold-btn modal-btn"><span>Заказать звонок</span></a>
           </div>
         </div>
 
@@ -453,6 +453,13 @@
         </div>
       </main>
       //= common/footer
+    </div>
+    <div style="display: none;" id="modal">
+      <h2>Получить консультацию</h2>
+      <form class="form">
+        <input type="text" class="mask">
+        <button class="btn blue-btn gold-btn">Отправить</button>
+      </form>
     </div>
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=c3b0db88-afa3-49b1-b1e6-f545d8be8b91" type="text/javascript"></script>
     <script src="js/main.js"></script>

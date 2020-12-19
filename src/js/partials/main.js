@@ -1,6 +1,6 @@
-
-
 $(document).ready(function () {
+
+
     $('.first-screen__slider').slick({
         infinite: true,
         slidesToShow: 1,
@@ -92,5 +92,10 @@ ymaps.ready(function () {
     myMap.geoObjects
         .add(myPlacemark)
     }
+
+    $('.modal-btn').click(function(e){
+        e.preventDefault()
+        $.fancybox.open($('#modal'))
+    })
    
 });

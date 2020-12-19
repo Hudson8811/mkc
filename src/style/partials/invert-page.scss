@@ -92,6 +92,12 @@
 .options__section-invert {
   background: #1c2329;
 
+  @include mMax {
+    .options__content {
+      margin-top: -120px;
+    }
+  }
+
   .section-title {
     color: #fff;
   }

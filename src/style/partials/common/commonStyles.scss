@@ -5,6 +5,13 @@ body {
   line-height: 17px;
 }
 
+a,
+button,
+input,
+textarea {
+  font-family: 'Montserrat', sans-serif;
+}
+
 .container {
   margin: 0 auto;
   max-width: 1080px;
@@ -45,6 +52,7 @@ body {
   letter-spacing: 0.2px;
   color: #ffffff;
   text-decoration: none;
+  border: none;
 
   span {
     white-space: nowrap;
@@ -290,5 +298,21 @@ body {
         color: #2d3748;
       }
     }
+  }
+}
+
+#modal {
+  h2 {
+    font-size: 20px;
+    line-height: 25px;
+    color: #000;
+  }
+
+  .form {
+    margin-top: 20px;
+  }
+
+  .blue-btn {
+    margin-top: 20px;
   }
 }

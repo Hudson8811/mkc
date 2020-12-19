@@ -26,9 +26,9 @@ tpl:'<div class="fancybox-share"><h1>{{SHARE}}</h1><p><a class="fancybox-share__
 
 /* my scripts */
 
-
-
 $(document).ready(function () {
+
+
     $('.first-screen__slider').slick({
         infinite: true,
         slidesToShow: 1,
@@ -120,5 +120,10 @@ ymaps.ready(function () {
     myMap.geoObjects
         .add(myPlacemark)
     }
+
+    $('.modal-btn').click(function(e){
+        e.preventDefault()
+        $.fancybox.open($('#modal'))
+    })
    
 });
