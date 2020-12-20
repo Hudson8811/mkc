@@ -36,7 +36,7 @@
     font-size: 14px;
     line-height: 23px;
     color: #585858;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 
     &:last-child {
       margin-bottom: 0;
@@ -84,6 +84,19 @@
         margin-top: 5px;
         border-radius: 50%;
         background-color: #585858;
+      }
+    }
+  }
+
+  ol {
+    li {
+      padding-left: 20px;
+
+      span {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
       }
     }
   }
