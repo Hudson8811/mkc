@@ -28,6 +28,10 @@ tpl:'<div class="fancybox-share"><h1>{{SHARE}}</h1><p><a class="fancybox-share__
 
 $(document).ready(function () {
 
+    $('.header__menu li a').click(function(){
+        $(this).siblings('.header__menu-sub').slideToggle();
+    });
+
 
     $('.first-screen__slider').slick({
         infinite: true,

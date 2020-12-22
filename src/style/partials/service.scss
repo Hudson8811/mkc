@@ -1,0 +1,61 @@
+.service-first-screen {
+  box-sizing: border-box;
+  padding: 184px 0 152px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @include mMax {
+    padding: 100px 0 40px;
+  }
+
+  .investor__checks {
+    .investor__checks-item {
+      width: calc(25% - 60px / 4);
+
+      @include tMax {
+        width: 100%;
+      }
+
+      p {
+        white-space: normal;
+        line-height: 17px;
+      }
+    }
+  }
+
+  .page-title {
+    color: #000000;
+    margin-bottom: 35px;
+  }
+
+  .container {
+    & > span {
+      display: block;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 30px;
+      letter-spacing: 0.2px;
+      color: #585858;
+      max-width: 846px;
+
+      @include mMax {
+        font-size: 14px;
+        line-height: 18px;
+      }
+    }
+  }
+
+  .blue-btn {
+    margin-top: 60px;
+    max-width: 263px;
+  }
+}
+
+.investor__checks {
+  .investor__checks-item {
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+  }
+}

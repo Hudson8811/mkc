@@ -70,6 +70,10 @@
           &:after {
             transform: rotate(180deg);
           }
+
+          & ~ .header__menu-sub {
+            transform: scaleY(1);
+          }
         }
       }
 
@@ -192,6 +196,84 @@
           bottom: auto;
           transform: rotate(-45deg);
         }
+      }
+    }
+  }
+}
+
+.header-black {
+  .header__menu li a {
+    color: #000000;
+  }
+
+  .header__menu li:first-child a:after {
+    background: center/cover url(../img/triangle-black.svg) no-repeat;
+  }
+
+  .phone-btn {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    color: #00a3ff;
+  }
+
+  &.header--active {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+
+  .header__burger {
+    div,
+    div:before,
+    div:after {
+      background-color: #000;
+    }
+
+    &.header__burger--active {
+      div {
+        background-color: transparent;
+      }
+    }
+  }
+
+  @include mMax {
+    .header__menu {
+      background-color: #fff;
+    }
+  }
+}
+
+.header .header__menu-sub {
+  position: absolute;
+  list-style: none;
+  transition: 0.2s;
+  transform: scaleY(0);
+  transform-origin: center top;
+  padding-top: 10px;
+
+  li {
+    a {
+      font-size: 12px;
+
+      &:after {
+        display: none !important;
+      }
+    }
+  }
+
+  &:hover {
+    transform: scaleY(1);
+  }
+
+  @include mMax {
+    position: relative;
+    transform: scaleY(1);
+    display: none;
+    transition: none;
+
+    li {
+      padding-left: 10px;
+
+      a {
+        font-size: 12px;
+        line-height: 15px;
       }
     }
   }
