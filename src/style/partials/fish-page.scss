@@ -1091,6 +1091,14 @@
       border: 1px solid #25a0ff;
       margin-bottom: 20px;
 
+      span {
+        display: block;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 21px;
+        color: rgba(88, 88, 88, 0.6);
+      }
+
       @include tMax {
         width: 100%;
       }
