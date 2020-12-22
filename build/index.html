@@ -374,6 +374,12 @@
                   <ul class="header__menu">
                       <li>
                           <a href="#">Активы</a>
+      
+                          <ul class="header__menu-sub">
+                              <li><a href="#">Золотодобыча</a></li>
+                              <li><a href="#">Лесное хозяйство</a></li>
+                              <li><a href="#">Продажа рыбы</a></li>
+                          </ul>
                       </li>
                       <li>
                           <a href="#">Условия</a>
@@ -396,11 +402,26 @@
       </footer>
     </div>
 
-    <div style="display: none;" id="modal">
-      <h2>Получить консультацию</h2>
-      <form class="form">
-        <input type="text" class="mask">
-        <button class="btn blue-btn">Отправить</button>
+    <div style="display: none;" class="modal"  id="modal">
+      <h2>Заполните короткую форму и мы свяжемся с вами в ближайшее время. </h2>
+      <form class="modal-form">
+        <label class="modal-label">
+          <span>Ваше имя *</span>
+          <input type="text">
+        </label>
+        <label class="modal-label">
+          <span>Email *</span>
+          <input type="email">
+        </label>
+        <label class="modal-label">
+          <span>Телефон *</span>
+          <input name="phone" type="text">
+        </label>
+        <div class="modal-form-bot">
+          <button class="btn blue-btn">Получить консультацию</button>
+          <p>Отправляя форму вы даете согласие на обработку ваших персональных данных.</p>
+        </div>
+        
       </form>
     </div>
 

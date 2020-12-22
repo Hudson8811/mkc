@@ -27,9 +27,25 @@ tpl:'<div class="fancybox-share"><h1>{{SHARE}}</h1><p><a class="fancybox-share__
 /* my scripts */
 
 $(document).ready(function () {
+    
 
-    $('.header__menu li a').click(function(){
-        $(this).siblings('.header__menu-sub').slideToggle();
+    $(document).on('focus','.modal-label input[type="text"], .modal-label input[type="email"], .modal-label textarea', function(){
+        $(this).parent('.modal-label').addClass('is-active');
+    } );
+
+    $(document).on('blur','.modal-label input[type="text"], .modal-label input[type="email"], .modal-label textarea', function(){
+        if($(this).val() == ""){
+            $(this).parent('.modal-label').removeClass('is-active');
+        }
+    } );
+
+    $('.header__menu li a').click(function(e){
+        e.preventDefault();
+        
+        if($(window).width() < 769){
+            $(this).toggleClass('is-active');
+            $(this).siblings('.header__menu-sub').slideToggle();
+        }
     });
 
 
@@ -254,3 +270,6 @@ $('.modal-btn').click(function(e){
     e.preventDefault()
     $.fancybox.open($('#modal'))
 })
+
+
+$("input[name='phone']").mask("+7(999) 999-9999");
