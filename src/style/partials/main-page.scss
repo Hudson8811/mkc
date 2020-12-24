@@ -1,3 +1,17 @@
+
+.fss-slider-wrap{
+  position: relative;
+}
+.fss-slider{
+  .slick-track{
+    display: flex;
+  }
+  .slick-slide{
+
+    height: auto;
+  }
+}
+
 .first-screen {
   &__section {
     position: relative;

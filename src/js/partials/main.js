@@ -1,20 +1,20 @@
 $(document).ready(function () {
-    
 
-    $(document).on('focus','.modal-label input[type="text"], .modal-label input[type="email"], .modal-label textarea', function(){
+
+    $(document).on('focus', '.modal-label input[type="text"], .modal-label input[type="email"], .modal-label textarea', function () {
         $(this).parent('.modal-label').addClass('is-active');
-    } );
+    });
 
-    $(document).on('blur','.modal-label input[type="text"], .modal-label input[type="email"], .modal-label textarea', function(){
-        if($(this).val() == ""){
+    $(document).on('blur', '.modal-label input[type="text"], .modal-label input[type="email"], .modal-label textarea', function () {
+        if ($(this).val() == "") {
             $(this).parent('.modal-label').removeClass('is-active');
         }
-    } );
+    });
 
-    $('.header__menu li a').click(function(e){
+    $('.header__menu li a').click(function (e) {
         e.preventDefault();
-        
-        if($(window).width() < 769){
+
+        if ($(window).width() < 769) {
             $(this).toggleClass('is-active');
             $(this).siblings('.header__menu-sub').slideToggle();
         }
@@ -27,7 +27,19 @@ $(document).ready(function () {
         slidesToScroll: 1,
         arrows: false,
         dots: true,
+        asNavFor: '.js-fss-slider'
     });
+
+
+    $('.js-fss-slider').slick({
+        arrows: false,
+        dots: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        fade:true,
+        asNavFor: '.first-screen__slider'
+    });
+
 
     $('.options__slider').slick({
         infinite: true,
@@ -48,14 +60,14 @@ $(document).ready(function () {
     });
 
     $(window).scroll(function () {
-        if ($(this).scrollTop() > $('.header').height()){
+        if ($(this).scrollTop() > $('.header').height()) {
             $('.header').addClass('header--active')
-        } else{
+        } else {
             $('.header').removeClass('header--active')
         }
     });
 
-    $('.investor__catalog-item').hover(function(){
+    $('.investor__catalog-item').hover(function () {
         const leftPosition = $(this).data('id')
         $('.investor__catalog-item').removeClass('investor__catalog-item-active')
         $(this).addClass('investor__catalog-item-active')
@@ -64,7 +76,7 @@ $(document).ready(function () {
         })
     })
 
-    $('.header__burger').click(function(){
+    $('.header__burger').click(function () {
         $(this).toggleClass('header__burger--active')
         $('.header .header__menu').toggleClass('header__menu--active')
     })
@@ -73,9 +85,9 @@ $(document).ready(function () {
 ymaps.ready(function () {
     // Создание экземпляра карты и его привязка к созданному контейнеру.
     var myMap = new ymaps.Map('map', {
-        center: [55.74086206899801,37.61425749999998],
-        zoom: 16,
-        controls: []
+            center: [55.74086206899801, 37.61425749999998],
+            zoom: 16,
+            controls: []
         }, {
             searchControlProvider: 'yandex#search'
         }),
@@ -83,12 +95,12 @@ ymaps.ready(function () {
         // Создание макета балуна на основе Twitter Bootstrap.
         MyBalloonLayout = ymaps.templateLayoutFactory.createClass(
             '<div class="popover top">' +
-                '<a class="close" href="#">&times;</a>' +
-                '<div class="arrow"></div>' +
-                '<div class="popover-inner">' +
-                '$[[options.contentLayout observeSize minWidth=255 maxWidth=255 minHeight=140]]' +
-                '</div>' +
-                '</div>', {
+            '<a class="close" href="#">&times;</a>' +
+            '<div class="arrow"></div>' +
+            '<div class="popover-inner">' +
+            '$[[options.contentLayout observeSize minWidth=255 maxWidth=255 minHeight=140]]' +
+            '</div>' +
+            '</div>', {
                 /**
                  * Строит экземпляр макета на основе шаблона и добавляет его в родительский HTML-элемент.
                  * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/layout.templateBased.Base.xml#build
@@ -128,7 +140,7 @@ ymaps.ready(function () {
                 onSublayoutSizeChange: function () {
                     MyBalloonLayout.superclass.onSublayoutSizeChange.apply(this, arguments);
 
-                    if(!this._isElement(this._$element)) {
+                    if (!this._isElement(this._$element)) {
                         return;
                     }
 
@@ -170,14 +182,15 @@ ymaps.ready(function () {
                  * @returns {Number[][]} Координаты левого верхнего и правого нижнего углов шаблона относительно точки привязки.
                  */
                 getShape: function () {
-                    if(!this._isElement(this._$element)) {
+                    if (!this._isElement(this._$element)) {
                         return MyBalloonLayout.superclass.getShape.call(this);
                     }
 
                     var position = this._$element.position();
 
                     return new ymaps.shape.Rectangle(new ymaps.geometry.pixel.Rectangle([
-                        [position.left, position.top], [
+                        [position.left, position.top],
+                        [
                             position.left + this._$element[0].offsetWidth,
                             position.top + this._$element[0].offsetHeight + this._$element.find('.arrow')[0].offsetHeight
                         ]
@@ -200,7 +213,7 @@ ymaps.ready(function () {
         // Создание вложенного макета содержимого балуна.
         MyBalloonContentLayout = ymaps.templateLayoutFactory.createClass(
             '<h3 class="popover-title">$[properties.balloonHeader]</h3>' +
-                '<div class="popover-content">$[properties.balloonContent]</div>'
+            '<div class="popover-content">$[properties.balloonContent]</div>'
         ),
 
         // Создание метки с пользовательским макетом балуна.
@@ -225,20 +238,20 @@ $(function () {
     $('#set-balloon-header').click(function () {
         window.myPlacemark.properties.set(
             'balloonHeader',
-            'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-                + 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+            'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' +
+            'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
         );
     });
     $('#set-balloon-content').click(function () {
         window.myPlacemark.properties.set(
             'balloonContent',
-            'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-                + 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+            'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' +
+            'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
         );
     });
 });
 
-$('.modal-btn').click(function(e){
+$('.modal-btn').click(function (e) {
     e.preventDefault()
     $.fancybox.open($('#modal'))
 })
